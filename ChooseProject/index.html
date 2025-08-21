@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quick Projects Randomizer</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Quick Projects Randomizer</h1>
+
+    <div class="category">
+      <label for="crud">CRUD & To-Do Style</label>
+      <input id="crud" type="button" value="Get Project" onclick="getValue('crud')">
+      <p id="crud_output" class="output">Crud Output</p>
+    </div>
+
+    <div class="category">
+      <label for="fun">Fun & Games</label>
+      <input id="fun" type="button" value="Get Project" onclick="getValue('fun')">
+      <p id="fun_output" class="output">Fun Output</p>
+    </div>
+
+    <div class="category">
+      <label for="data">Data & Utilities</label>
+      <input id="data" type="button" value="Get Project" onclick="getValue('data')">
+      <p id="data_output" class="output">Data Output</p>
+    </div>
+
+    <div class="category">
+      <label for="api">API-based Apps</label>
+      <input id="api" type="button" value="Get Project" onclick="getValue('api')">
+      <p id="api_output" class="output">API Output</p>
+    </div>
+
+    <div class="category">
+      <label for="ui">UI/Interaction Demos</label>
+      <input id="ui" type="button" value="Get Project" onclick="getValue('ui')">
+      <p id="ui_output" class="output">UI Output</p>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

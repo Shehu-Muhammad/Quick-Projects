@@ -1,0 +1,71 @@
+/* Basic reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 30px;
+  color: #2c3e50;
+}
+
+.category {
+  background-color: #fff;
+  padding: 15px 20px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+label {
+  font-weight: bold;
+  display: block;
+  margin-bottom: 8px;
+}
+
+input[type="button"] {
+  padding: 8px 16px;
+  font-size: 14px;
+  border: none;
+  background-color: #3498db;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+input[type="button"]:hover {
+  background-color: #2980b9;
+}
+
+.output {
+    font-style: italic;
+    color: #555;
+    margin-top: 10px;        /* slightly more space from button */
+    text-align: center;      /* center the project text */
+    background-color: #ecf0f1; /* subtle highlight */
+    padding: 6px 10px;
+    border-radius: 4px;
+    opacity: 1;
+    transition: opacity 0.4s ease-in-out, background-color 0.3s;
+}
+
+/* fade-out class for animation */
+.fade-out {
+    opacity: 0;
+}
+
