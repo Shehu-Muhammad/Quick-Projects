@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hangman Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Hangman</h1>
+    <section>
+        <!-- Display hidden Word with underscores and blanks -->
+         <input type="button" value="PLAY" onclick="play()">
+         <div id="word">
+         </div>
+    </section>
+    <section>
+        <div id="letters"></div>
+    </section>
+    <section>
+        <!-- Remaining attempts counter -->
+        Total Guesses Remaining: <span id="guesses"></span>
+    </section>
+    <section>
+        <div id="result"></div>
+    </section>
+    <script src="index.js"></script>
+</body>
+</html>
