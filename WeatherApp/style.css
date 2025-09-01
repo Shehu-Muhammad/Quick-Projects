@@ -1,0 +1,72 @@
+/* General page style */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  text-align: center;
+  background: linear-gradient(to bottom, #4facfe, #00f2fe); /* Sky gradient */
+  color: #fff;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Title */
+h1 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+/* Form container */
+label {
+  font-size: 1rem;
+  margin-right: 5px;
+}
+
+input[type="text"], 
+select {
+  padding: 10px;
+  margin: 8px 0;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+  width: 220px;
+  outline: none;
+}
+
+/* Button */
+input[type="button"] {
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 8px;
+  border: none;
+  background: #ff9800;
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+input[type="button"]:hover {
+  background: #e68900;
+}
+
+/* Weather output */
+h2 {
+  margin-top: 30px;
+  font-size: 1.5rem;
+}
+
+#weather {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  background: rgba(255, 255, 255, 0.2);
+  padding: 15px;
+  border-radius: 12px;
+  display: inline-block;
+  min-width: 220px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  backdrop-filter: blur(8px); /* frosted glass effect */
+}
