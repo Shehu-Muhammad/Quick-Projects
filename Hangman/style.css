@@ -1,9 +1,68 @@
+/* General Page Styling */
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+h1 {
+    color: #444;
+    margin-bottom: 20px;
+}
+
+/* Word Display */
+#word {
+    margin: 20px 0;
+    font-size: 2rem;
+    letter-spacing: 10px;
+    font-weight: bold;
+}
+
+/* Buttons (letters + play button) */
+button, input[type="button"] {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover, input[type="button"]:hover {
+    background-color: #45a049;
+}
+
+/* Disabled buttons */
+button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+/* Correct / Incorrect buttons */
 .correct {
-    background-color: green;
-    color: white; /* optional for readability */
+    background-color: #28a745 !important;
+    color: white;
 }
 
 .incorrect {
-    background-color: red;
+    background-color: #dc3545 !important;
     color: white;
+}
+
+/* Guesses + Result */
+#guesses {
+    font-weight: bold;
+    color: #007bff;
+}
+
+#result {
+    margin-top: 20px;
+    font-size: 1.5rem;
+    font-weight: bold;
 }
