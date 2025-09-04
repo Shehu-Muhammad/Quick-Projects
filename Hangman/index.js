@@ -4,14 +4,17 @@ const maxGuesses = 8;
 const revealedWord = Array(secretWord.length).fill('_');
 const result = document.getElementById('result');
 const container = document.getElementById("letters");
+let isGameOver = false;
 
 function showGuesses() {
     guessesRemaining.innerHTML = maxGuesses;
 }
 
 function subtractGuess() {
+    if(isGameOver) return;
     if (guessesRemaining.innerHTML == 0) {
         result.innerHTML = "YOU LOSE!!!";
+        endGame();
     } else {
         guessesRemaining.innerHTML -= 1;
     }
@@ -30,6 +33,7 @@ function hiddenWordSpans() {
 }
 
 function revealLetter(letter, btn) {
+    if(isGameOver) return; 
     const letters = document.querySelectorAll("#word .letter");
     let found = false;
     for (let i = 0; i < secretWord.length; i++) {
@@ -43,6 +47,7 @@ function revealLetter(letter, btn) {
 
     if (revealedWord.join('') === secretWord) {
         result.innerHTML = "YOU WIN!!!"
+        endGame();
     }
 
     if(!found) {
@@ -63,7 +68,7 @@ function displayLetters() {
     }
 }
 
-function play() { 
+function play() {
     container.innerHTML = ""  // removes old buttons
 
     hiddenWordSpans();
@@ -71,4 +76,8 @@ function play() {
     showGuesses();
 }
 
-
+function endGame() {
+    isGameOver = true;
+    const buttons = container.querySelectorAll("button");
+    buttons.forEach(b => b.disabled = true);
+}
