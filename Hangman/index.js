@@ -1,22 +1,29 @@
 const secretWord = 'JAVASCRIPT';
 const guessesRemaining = document.getElementById('guesses');
 const maxGuesses = 8;
-const revealedWord = Array(secretWord.length).fill('_');
+let currentGuesses = maxGuesses;
+let revealedWord = Array(secretWord.length).fill('_');
 const result = document.getElementById('result');
 const container = document.getElementById("letters");
+let playBtn = document.getElementById('play');
+let isResetGame = false;
 let isGameOver = false;
 
 function showGuesses() {
-    guessesRemaining.innerHTML = maxGuesses;
+    currentGuesses = maxGuesses; // reset each new game
+    guessesRemaining.innerHTML = `Guesses left: ${maxGuesses}`;
 }
 
 function subtractGuess() {
     if(isGameOver) return;
-    if (guessesRemaining.innerHTML == 0) {
-        result.innerHTML = "YOU LOSE!!!";
+
+    currentGuesses--;
+    guessesRemaining.innerHTML = `Guesses left: ${currentGuesses}`;
+
+    if (currentGuesses === 0) {
+        result.innerHTML = "Game Over – You Lose!";
+        result.className = "lose";
         endGame();
-    } else {
-        guessesRemaining.innerHTML -= 1;
     }
 }
 
@@ -26,7 +33,8 @@ function hiddenWordSpans() {
 
     for (let i = 0; i < secretWord.length; i++) {
         const span = document.createElement("span");
-        span.textContent = "_ ";  // start hidden
+        span.textContent = "_";  // start hidden 
+        span.style.margin = "0 5px";
         span.classList.add("letter");
         wordContainer.appendChild(span);
     }
@@ -47,6 +55,7 @@ function revealLetter(letter, btn) {
 
     if (revealedWord.join('') === secretWord) {
         result.innerHTML = "YOU WIN!!!"
+        result.className = "win";
         endGame();
     }
 
@@ -69,11 +78,22 @@ function displayLetters() {
 }
 
 function play() {
-    container.innerHTML = ""  // removes old buttons
+    if(playBtn.value == 'Play Again') {
+        isResetGame = true;
+    }
 
-    hiddenWordSpans();
-    displayLetters();
-    showGuesses();
+    if(isResetGame || isGameOver || playBtn.value == 'PLAY') {
+        revealedWord = Array(secretWord.length).fill('_');
+        isGameOver = false;
+        result.innerHTML = "";
+        result.className = "";
+        container.innerHTML = ""  // removes old buttons
+        playBtn.value = 'Play Again';
+
+        hiddenWordSpans();
+        displayLetters();
+        showGuesses();
+    }
 }
 
 function endGame() {

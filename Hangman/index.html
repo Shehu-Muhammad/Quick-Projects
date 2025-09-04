@@ -10,7 +10,7 @@
     <h1>Hangman</h1>
     <section>
         <!-- Display hidden Word with underscores and blanks -->
-         <input type="button" value="PLAY" onclick="play()">
+         <input type="button" value="PLAY" id="play" onclick="play()">
          <div id="word">
          </div>
     </section>
@@ -19,7 +19,7 @@
     </section>
     <section>
         <!-- Remaining attempts counter -->
-        Total Guesses Remaining: <span id="guesses"></span>
+        <span id="guesses"></span>
     </section>
     <section>
         <div id="result"></div>

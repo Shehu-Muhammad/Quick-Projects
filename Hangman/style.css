@@ -61,8 +61,17 @@ button:disabled {
     color: #007bff;
 }
 
-#result {
+/* #result {
     margin-top: 20px;
     font-size: 1.5rem;
     font-weight: bold;
+} */
+
+#result {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 10px;
 }
+#result.win { color: green; }
+#result.lose { color: red; }
+
