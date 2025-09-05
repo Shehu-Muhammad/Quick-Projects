@@ -21,7 +21,7 @@ function subtractGuess() {
     guessesRemaining.innerHTML = `Guesses left: ${currentGuesses}`;
 
     if (currentGuesses === 0) {
-        result.innerHTML = "Game Over – You Lose!";
+        result.innerHTML = `Game Over – You Lose! The word was: ${secretWord}`;
         result.className = "lose";
         endGame();
     }
