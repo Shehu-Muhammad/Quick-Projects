@@ -1,0 +1,8 @@
+javascript
+python
+variable
+function
+object
+array
+loop
+developer
