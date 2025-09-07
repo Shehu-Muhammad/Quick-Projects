@@ -9,6 +9,13 @@
 <body>
     <h1>Hangman</h1>
     <section>
+        <!-- Custom word input, hidden at first -->
+        <div id="customWrapper">
+            <input type="password" id="custom" placeholder="Enter custom word">
+            <button type="button" onclick="toggleVisibility()">👁</button>
+        </div>
+        <!-- Show/hide input field entirely -->
+        <input type="button" id="show" value="Show Input" onclick="toggleShow()">
         <!-- Display hidden Word with underscores and blanks -->
          <input type="button" value="PLAY" id="play" onclick="play()">
          <div id="word">

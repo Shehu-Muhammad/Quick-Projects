@@ -22,6 +22,34 @@ h1 {
     font-weight: bold;
 }
 
+.hidden {
+  display: none;
+}
+
+#custom {
+  padding: 8px;
+  border: 2px solid #333;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+#customWrapper button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+}
+
+#customWrapper button {
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.2s ease;
+    font-size: 1.2em;
+}
+
 button, input[type="button"] {
     background-color: #3498db; /* nice blue */
     border: none;

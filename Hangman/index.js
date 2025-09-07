@@ -7,8 +7,44 @@ let revealedWord = [];
 const result = document.getElementById('result');
 const container = document.getElementById("letters");
 let playBtn = document.getElementById('play');
+let custom = document.getElementById('custom');
+let show = document.getElementById('show');
 let isResetGame = false;
 let isGameOver = false;
+
+function toggleShow() {
+    const wrapper = document.getElementById("customWrapper");
+    const showBtn = document.getElementById("show");
+
+    if (wrapper.classList.contains("hidden")) {
+        wrapper.classList.remove("hidden");
+        showBtn.value = "Hide Input";
+    } else {
+        wrapper.classList.add("hidden");
+        showBtn.value = "Show Input";
+    }
+}
+
+function toggleVisibility() {
+    const customInput = document.getElementById('custom');
+    const toggleBtn = customInput.nextElementSibling; // 👁 button
+
+    if (customInput.type === "password") {
+        customInput.type = "text";   // show word
+        toggleBtn.style.backgroundColor = "lightgreen"; // visible
+    } else {
+        customInput.type = "password"; // hide word
+        toggleBtn.style.backgroundColor = "lightcoral"; // hidden
+    }
+}
+
+// Set initial state when page loads
+window.onload = () => {
+    const customInput = document.getElementById('custom');
+    const toggleBtn = customInput.nextElementSibling;
+    customInput.type = "password"; // make sure hidden
+    toggleBtn.style.backgroundColor = "lightcoral"; // red by default
+};
 
 // Load words.txt into array
 async function loadWords() {
@@ -100,8 +136,12 @@ async function play() {
 
         if (words.length === 0) {
             await loadWords(); // load once
-        } 
-        secretWord = pickRandomWord(); // new random word
+        }
+        if (custom.value === '') {
+            secretWord = pickRandomWord(); // new random word
+        } else {
+            secretWord = custom.value.toUpperCase();
+        }
         revealedWord = Array(secretWord.length).fill('_');
         isGameOver = false;
         result.innerHTML = "";
@@ -119,4 +159,5 @@ function endGame() {
     isGameOver = true;
     const buttons = container.querySelectorAll("button");
     buttons.forEach(b => b.disabled = true);
+    custom.value = '';
 }
