@@ -1,13 +1,27 @@
-const secretWord = 'JAVASCRIPT';
+let words = [];
+let secretWord = "";
 const guessesRemaining = document.getElementById('guesses');
 const maxGuesses = 8;
 let currentGuesses = maxGuesses;
-let revealedWord = Array(secretWord.length).fill('_');
+let revealedWord = [];
 const result = document.getElementById('result');
 const container = document.getElementById("letters");
 let playBtn = document.getElementById('play');
 let isResetGame = false;
 let isGameOver = false;
+
+// Load words.txt into array
+async function loadWords() {
+    const response = await fetch("words.txt");
+    const text = await response.text();
+    words = text.split("\n").map(w => w.trim().toUpperCase()).filter(w => w);
+}
+
+// Pick a random word
+function pickRandomWord() {
+    const randomIndex = Math.floor(Math.random() * words.length);
+    return words[randomIndex];
+}
 
 function showGuesses() {
     currentGuesses = maxGuesses; // reset each new game
@@ -77,12 +91,17 @@ function displayLetters() {
     }
 }
 
-function play() {
+async function play() {
     if(playBtn.value == 'Play Again') {
         isResetGame = true;
     }
 
     if(isResetGame || isGameOver || playBtn.value == 'PLAY') {
+
+        if (words.length === 0) {
+            await loadWords(); // load once
+        } 
+        secretWord = pickRandomWord(); // new random word
         revealedWord = Array(secretWord.length).fill('_');
         isGameOver = false;
         result.innerHTML = "";
