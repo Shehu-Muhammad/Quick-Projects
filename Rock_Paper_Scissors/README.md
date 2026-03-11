@@ -87,10 +87,6 @@ This project helped strengthen skills in:
 - Writing conditional logic
 - Updating values on the page dynamically
 
-## Live Demo
-
-[Live Demo](https://dev-arcade-game-rock-paper-scissors.vercel.app/)
-
 ## Screenshots
 
 Add screenshots here if you want to showcase the game UI.
