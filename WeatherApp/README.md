@@ -99,11 +99,15 @@ This project helped strengthen skills in:
 
 ## Screenshots
 
-![Weather App Screenshot](./screenshots/weather_app.png)
+<p align="center">
+  <img src="./screenshots/weather_app.png" alt="Weather App Screenshot" width="500">
+</p>
 
-### EXAMPLE
+### Example
 
-![Example](./screenshots/weather_app_result.png)
+<p align="center">
+  <img src="./screenshots/weather_app_result.png" alt="Example" width="500">
+</p>
 
 ## Author
 
