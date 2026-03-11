@@ -99,7 +99,7 @@ This project helped strengthen skills in:
 
 ## Screenshots
 
-Add screenshots here if you want to showcase the UI.
+![Weather App Screenshot](./screenshots/weather_app.png)
 
 ## Author
 
