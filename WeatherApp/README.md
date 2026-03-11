@@ -101,6 +101,10 @@ This project helped strengthen skills in:
 
 ![Weather App Screenshot](./screenshots/weather_app.png)
 
+### EXAMPLE
+
+![Example](./screenshots/weather_app_result.png)
+
 ## Author
 
 **Shehu Muhammad**
