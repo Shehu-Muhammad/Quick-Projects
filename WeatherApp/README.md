@@ -100,13 +100,13 @@ This project helped strengthen skills in:
 ## Screenshots
 
 <p align="center">
-  <img src="./screenshots/weather_app.png" alt="Weather App Screenshot" width="500">
+  <img src="./screenshots/weather_app.png" alt="Weather App Screenshot" width="300">
 </p>
 
 ### Example
 
 <p align="center">
-  <img src="./screenshots/weather_app_result.png" alt="Example" width="500">
+  <img src="./screenshots/weather_app_result.png" alt="Example" width="300">
 </p>
 
 ## Author
